@@ -48,13 +48,21 @@ def analyze_numbers(numbers):
 
     analysis = {}
 
-    # TODO: Calculate count
-    # TODO: Calculate sum
-    # TODO: Calculate average
-    # TODO: Find minimum
-    # TODO: Find maximum
-    # TODO: Count even numbers (hint: use modulo operator)
-    # TODO: Count odd numbers
+    analysis["count"] = len(numbers)
+    analysis["sum"] = sum(numbers)
+    analysis["average"] = sum(numbers) / len(numbers)
+    analysis["minimum"] = min(numbers)
+    analysis["maximum"] = max(numbers)
+
+    even_count = 0
+    odd_count = 0
+    for num in numbers:
+        if int(num) % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    analysis["even_count"] = even_count
+    analysis["odd_count"] = odd_count
 
     return analysis
 
