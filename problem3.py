@@ -80,13 +80,15 @@ def display_analysis(analysis):
     print("\nAnalysis Results:")
     print("-" * 20)
 
-    # TODO: Display all analysis results in a nice format
-    # Example:
-    # Count: 5
-    # Sum: 25
-    # Average: 5.00
-    # etc.
-    pass
+    print("\nAnalysis Results:")
+    print("-" * 20)
+    print(f"Count      : {analysis['count']}")
+    print(f"Sum        : {analysis['sum']}")
+    print(f"Average    : {analysis['average']:.2f}")
+    print(f"Minimum    : {analysis['minimum']}")
+    print(f"Maximum    : {analysis['maximum']}")
+    print(f"Even Count : {analysis['even_count']}")
+    print(f"Odd Count  : {analysis['odd_count']}")
 
 
 def main():
