@@ -24,10 +24,14 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
     """
     characters = ""
 
-    # TODO: Build character set based on parameters
-    # if use_lowercase:
-    #     characters += string.ascii_lowercase
-    # etc.
+    if use_lowercase:
+        characters += string.ascii_lowercase
+    if use_uppercase:
+        characters += string.ascii_uppercase
+    if use_digits:
+        characters += string.digits
+    if use_special:
+        characters += string.punctuation
 
     if not characters:
         return "Error: No character types selected!"
