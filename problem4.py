@@ -62,9 +62,11 @@ def count_characters(filename, include_spaces=True):
     Returns:
         int: Total number of characters
     """
-    # TODO: Open file and count characters
-    # If include_spaces is False, don't count spaces
-    pass
+    with open(filename, 'r') as f:
+        text = f.read()
+        if not include_spaces:
+            text = text.replace(" ", "").replace("\n", "")
+    return len(text)
 
 
 def find_longest_word(filename):
