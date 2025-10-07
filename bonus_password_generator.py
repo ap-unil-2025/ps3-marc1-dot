@@ -38,13 +38,23 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
 
     password = []
 
-    # TODO: Ensure at least one character from each selected type
-    # This prevents passwords that don't meet the criteria
+   # Ensure at least one character from each selected type
+    if use_lowercase:
+        password.append(random.choice(string.ascii_lowercase))
+    if use_uppercase:
+        password.append(random.choice(string.ascii_uppercase))
+    if use_digits:
+        password.append(random.choice(string.digits))
+    if use_special:
+        password.append(random.choice(string.punctuation))
 
-    # TODO: Fill the rest of the password randomly
+    # Fill the rest randomly
+    while len(password) < length:
+        password.append(random.choice(characters))
 
-    # TODO: Shuffle the password list to randomize order
-
+    # Shuffle the list to randomize order
+    random.shuffle(password)
+    
     return ''.join(password)
 
 
