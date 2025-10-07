@@ -54,7 +54,7 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
 
     # Shuffle the list to randomize order
     random.shuffle(password)
-    
+
     return ''.join(password)
 
 
@@ -70,12 +70,21 @@ def password_strength(password):
     """
     score = 0
 
-    # TODO: Add points for different criteria
-    # - Length >= 8: +1 point
-    # - Length >= 12: +1 point
-    # - Contains lowercase: +1 point
-    # - Contains uppercase: +1 point
-    # - Contains digits: +1 point
+    # Length criteria
+    if len(password) >= 8:
+        score += 1
+    if len(password) >= 12:
+        score += 1
+
+    # Character diversity
+    if any(c.islower() for c in password):
+        score += 1
+    if any(c.isupper() for c in password):
+        score += 1
+    if any(c.isdigit() for c in password):
+        score += 1
+    if any(c in string.punctuation for c in password):
+        score += 1
 
     strength = ["Very Weak", "Weak", "Fair", "Good", "Strong", "Very Strong"]
     return strength[min(score, 5)]
