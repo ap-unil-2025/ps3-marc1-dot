@@ -2,7 +2,7 @@
 
 ## Student Information
 Name: Marc Birchler
-Date: 29.09.2025
+Date: 07.10.2025
 
 ## Assignment Overview
 This assignment covers Git version control basics and Python fundamentals including variables, control flow, functions, and file I/O.
