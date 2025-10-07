@@ -79,9 +79,19 @@ def find_longest_word(filename):
     Returns:
         str: The longest word found
     """
-    # TODO: Find the longest word
-    # Hint: You might need to remove punctuation
-    pass
+    with open(filename, 'r') as f:
+        text = f.read()
+
+    # Remove punctuation
+    translator = str.maketrans('', '', string.punctuation)
+    clean_text = text.translate(translator)
+
+    words = clean_text.split()
+    if not words:
+        return ""
+
+    # Find the longest word
+    return max(words, key=len)
 
 
 def word_frequency(filename):
