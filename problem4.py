@@ -109,11 +109,16 @@ def word_frequency(filename):
 
     frequency = {}
 
-    # TODO: Open file
-    # TODO: Read all words
-    # TODO: Convert to lowercase
-    # TODO: Remove punctuation (use string.punctuation)
-    # TODO: Count frequency of each word
+    with open(filename, 'r') as f:
+        text = f.read()
+
+    # Clean and normalize
+    translator = str.maketrans('', '', string.punctuation)
+    clean_text = text.translate(translator).lower()
+
+    words = clean_text.split()
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
 
     return frequency
 
