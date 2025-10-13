@@ -44,7 +44,7 @@ def analyze_numbers(numbers):
         dict: Dictionary with analysis results, or None if list is empty
     """
     if not numbers:
-        return {}
+        return none
 
     analysis = {}
 
