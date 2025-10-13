@@ -108,6 +108,5 @@ def main():
     # Display the results
     display_analysis(analysis)
 
-
 if __name__ == "__main__":
     main()
