@@ -44,15 +44,15 @@ def analyze_numbers(numbers):
         dict: Dictionary with analysis results, or None if list is empty
     """
     if not numbers:
-    return {}
+        return {}
 
     analysis = {}
 
     analysis["count"] = len(numbers)
     analysis["sum"] = sum(numbers)
     analysis["average"] = sum(numbers) / len(numbers)
-    analysis["min"] = min(numbers)
-    analysis["max"] = max(numbers)
+    analysis["minimum"] = min(numbers)
+    analysis["maximum"] = max(numbers)
 
     even_count = 0
     odd_count = 0
