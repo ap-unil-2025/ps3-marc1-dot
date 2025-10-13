@@ -43,8 +43,8 @@ def test_fahrenheit_to_celsius():
 def test_problem3_imports():
     """Test that problem3.py can be imported."""
     try:
-    import problem3
-    assert hasattr(problem3, 'analyze_numbers')
+        import problem3
+        assert hasattr(problem3, 'analyze_numbers')
 except ImportError:
-    pass  # <-- ajoute cette ligne ou un print pour éviter l'erreur
+    pass
 
