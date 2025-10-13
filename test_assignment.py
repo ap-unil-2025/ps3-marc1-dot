@@ -46,4 +46,5 @@ def test_problem3_imports():
     import problem3
     assert hasattr(problem3, 'analyze_numbers')
 except ImportError:
-    pass
+    pass  # <-- ajoute cette ligne ou un print pour éviter l'erreur
+
